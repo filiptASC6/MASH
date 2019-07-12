@@ -7,16 +7,18 @@ const spouseName = ["Karen", "Sophia", "Shaniqua", "Trish", "Oliva", "Emma", "Gr
 
 const job = ["Engineer", "Stunt Double", "Doctor", "Librarian", "Soldier"]
 
+
+
 function getHome () {
     return (home[Math.floor(Math.random()*home.length)]);
 }
 
 function getHomeInput (){
-    if (process.argv[2] == " "){
+    if (process.argv[2] != null){
+        home.push (process.argv[2]); 
         return getHome();
     }
     else {
-        home.push (process.argv[2]); 
         return getHome();
     }
 }
@@ -36,7 +38,7 @@ function getChildrenCount (){
 }
 
 function childrenCountInput (){
-    if (process.argv[3] == " "){
+    if (process.argv[3] == null){
         return getChildrenCount();
     }
     else {
